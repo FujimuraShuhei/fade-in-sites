@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin: 0 auto;
 }
 
@@ -13,6 +14,16 @@
   font-size: 48px;
   text-align: center;
   font-weight: 700;
+}
+
+.textcenter {
+  text-align: center;
+}
+
+.textgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 80px;
 }
 
 /* text-fade */
@@ -27,6 +38,7 @@
 
 .fadeInVisible {
   animation: fadeIn 0.4s ease-in forwards;
+  opacity: 1;
 }
 
 .text01 {
@@ -163,6 +175,12 @@
   border-radius: 20px;
   background: #fff;
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  transition: 0.3s all;
+}
+.card:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: translateY(-40px);
 }
 .cardInnerBox {
   padding: 16px;
@@ -259,5 +277,82 @@
 .card015 {
   animation: fadeIn 0.4s ease-out forwards;
   animation-delay: 0.8s;
+  opacity: 0;
+}
+
+.card016 {
+  animation: fadeIn 2s ease-in-out forwards;
+  opacity: 0;
+}
+.card017 {
+  animation: fadeIn 2s ease-in-out forwards;
+  opacity: 0;
+}
+.card018 {
+  animation: fadeIn 2s ease-in-out forwards;
+  opacity: 0;
+}
+.card019 {
+  animation: fadeIn 0.1s ease-in-out forwards;
+  opacity: 0;
+}
+.card020 {
+  animation: fadeIn 0.1s ease-in-out forwards;
+  opacity: 0;
+}
+.card021 {
+  animation: fadeIn 0.1s ease-in-out forwards;
+  opacity: 0;
+}
+.card024 {
+  animation: fadeIn 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+.card025 {
+  animation: fadeIn 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+.card026 {
+  animation: fadeIn 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+.card027 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+.card028 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+.card029 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+.card030 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+.card031 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+.card032 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+
+.card040 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.card041 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+.card042 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: 3s;
   opacity: 0;
 }
