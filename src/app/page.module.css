@@ -356,3 +356,73 @@
   animation-delay: 3s;
   opacity: 0;
 }
+
+.section02 p {
+  font-size: 48px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.card050 {
+  animation: fadeIn 0.7s ease-in-out forwards;
+  opacity: 0;
+}
+.card051 {
+  animation: fadeIn 0.8s ease-in-out forwards;
+  opacity: 0;
+}
+.card052 {
+  animation: fadeIn 0.9s ease-in-out forwards;
+  opacity: 0;
+}
+.card053 {
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+.card060 {
+  animation: fadeIn 0.4s ease-in-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+.card061 {
+  animation: fadeIn 0.4s ease-in-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+.card062 {
+  animation: fadeIn 0.4s ease-in-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.card063 {
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+.card064 {
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+.card065 {
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+.card066 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+.card067 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+.card068 {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}

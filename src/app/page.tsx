@@ -52,6 +52,32 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.5,
+    });
+
+    const cardContainers = document.querySelectorAll('.cardContainer');
+    cardContainers.forEach((container) => {
+      observer.observe(container);
+    });
+
+    // クリーンアップ
+    return () => {
+      cardContainers.forEach((container) => {
+        observer.unobserve(container);
+      });
+    };
+  }, []); // useEffectの第二引数に空の配列を渡して初回レンダリング時のみ実行
+
   return (
     <main className={styles.main}>
       <div>
@@ -377,7 +403,7 @@ export default function Home() {
       <div className={styles.section01}>
         <p>0.4はちょうどよさそう</p>
       </div>
-      <div className={styles.section01}>
+      <div className={styles.section02}>
         <p>0.4sパターン</p>
       </div>
       <div className={styles.cardContainer}>
@@ -425,6 +451,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className={styles.section02}>
+        <p>0.5sパターン</p>
+      </div>
       <div className={styles.cardContainer}>
         <div ref={addToRefs} className={`${styles.card} ${styles.card027}`}>
           <Image
@@ -470,6 +499,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className={styles.section02}>
+        <p>0.6sパターン</p>
+      </div>
       <div className={styles.cardContainer}>
         <div ref={addToRefs} className={`${styles.card} ${styles.card030}`}>
           <Image
@@ -511,6 +543,198 @@ export default function Home() {
             <p>
               これは富士山です。夕方の富士山はとても綺麗です。どこから撮ったかって？
               それは想像におまかせするよ。まぁAIなんだけどね
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.section02}>
+        <p>0.7sパターン</p>
+      </div>
+      <div className={styles.cardContainer}>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card050}`}>
+          <Image
+            src="/images/card01.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>どこかわからん絶景</h3>
+            <p>
+              ここはよくわからないけど、めっちゃ綺麗な絶景ポジションで、夜は綺麗な星がみれますが一人で来るとまず寂しくて景色どころではないでしょう。
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card050}`}>
+          <Image
+            src="/images/card02.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>沖縄</h3>
+            <p>
+              沖縄の海ですが、ここは沖縄の海です。それ以上はありません。綺麗です。
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card050}`}>
+          <Image
+            src="/images/card03.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>富士山</h3>
+            <p>
+              これは富士山です。夕方の富士山はとても綺麗です。どこから撮ったかって？
+              それは想像におまかせするよ。まぁAIなんだけどね
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.section02}>
+        <p>0.8sパターン</p>
+      </div>
+      <div className={styles.cardContainer}>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card051}`}>
+          <Image
+            src="/images/card01.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>どこかわからん絶景</h3>
+            <p>
+              ここはよくわからないけど、めっちゃ綺麗な絶景ポジションで、夜は綺麗な星がみれますが一人で来るとまず寂しくて景色どころではないでしょう.
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card051}`}>
+          <Image
+            src="/images/card02.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>沖縄</h3>
+            <p>
+              沖縄の海ですが、ここは沖縄の海です。それ以上はありません。綺麗です.
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card051}`}>
+          <Image
+            src="/images/card03.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>富士山</h3>
+            <p>
+              これは富士山です。夕方の富士山はとても綺麗です。どこから撮ったかって？
+              それは想像におまかせするよ。まぁAIなんだけどね.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.section02}>
+        <p>0.9sパターン</p>
+      </div>
+      <div className={styles.cardContainer}>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card052}`}>
+          <Image
+            src="/images/card01.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>どこかわからん絶景</h3>
+            <p>
+              ここはよくわからないけど、めっちゃ綺麗な絶景ポジションで、夜は綺麗な星がみれますが一人で来るとまず寂しくて景色どころではないでしょう.
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card052}`}>
+          <Image
+            src="/images/card02.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>沖縄</h3>
+            <p>
+              沖縄の海ですが、ここは沖縄の海です。それ以上はありません。綺麗です.
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card052}`}>
+          <Image
+            src="/images/card03.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>富士山</h3>
+            <p>
+              これは富士山です。夕方の富士山はとても綺麗です。どこから撮ったかって？
+              それは想像におまかせするよ。まぁAIなんだけどね.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.section02}>
+        <p>1.0sパターン</p>
+      </div>
+      <div className={styles.cardContainer}>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card053}`}>
+          <Image
+            src="/images/card01.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>どこかわからん絶景</h3>
+            <p>
+              ここはよくわからないけど、めっちゃ綺麗な絶景ポジションで、夜は綺麗な星がみれますが一人で来るとまず寂しくて景色どころではないでしょう.
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card053}`}>
+          <Image
+            src="/images/card02.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>沖縄</h3>
+            <p>
+              沖縄の海ですが、ここは沖縄の海です。それ以上はありません。綺麗です.
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card053}`}>
+          <Image
+            src="/images/card03.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>富士山</h3>
+            <p>
+              これは富士山です。夕方の富士山はとても綺麗です。どこから撮ったかって？
+              それは想像におまかせするよ。まぁAIなんだけどね.
             </p>
           </div>
         </div>
@@ -575,16 +799,6 @@ export default function Home() {
           見え方としてはすごくよくなったけど、
           <br />
           ちょっと遅くないか？
-        </p>
-      </div>
-      <div>
-        <p className={styles.title}>カードタイプのフェードイン</p>
-        <p className={styles.title}>全て fadeIn 0.4s</p>
-        <p className={styles.title}>
-          ① animation-delay: 1s;
-          <br />
-          ② animation-delay: 2s;
-          <br />③ animation-delay: 3s;
         </p>
       </div>
       <div className={styles.cardContainer}>
@@ -687,6 +901,172 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div>
+        <p className={styles.title}>カードタイプのフェードイン</p>
+        <p className={styles.title}>全て fadeIn 0.4s</p>
+        <p className={styles.title}>
+          ① animation-delay: 0.1s;
+          <br />
+          ② animation-delay: 0.2s;
+          <br />③ animation-delay: 0.3s;
+        </p>
+      </div>
+      <div className={styles.cardContainer}>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card060}`}>
+          <Image
+            src="/images/card01.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>どこかわからん絶景</h3>
+            <p>
+              ここはよくわからないけど、めっちゃ綺麗な絶景ポジションで、夜は綺麗な星がみれますが一人で来るとまず寂しくて景色どころではないでしょう。
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card061}`}>
+          <Image
+            src="/images/card02.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>沖縄</h3>
+            <p>
+              沖縄の海ですが、ここは沖縄の海です。それ以上はありません。綺麗です。
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card062}`}>
+          <Image
+            src="/images/card03.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>富士山</h3>
+            <p>
+              これは富士山です。夕方の富士山はとても綺麗です。どこから撮ったかって？
+              それは想像におまかせするよ。まぁAIなんだけどね
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p className={styles.title}>カードタイプのフェードイン</p>
+        <p className={styles.title}>全て fadeIn 0.8s</p>
+        <p className={styles.title}>
+          ① animation-delay: 0.4s;
+          <br />
+          ② animation-delay: 0.6s;
+          <br />③ animation-delay: 0.8s;
+        </p>
+      </div>
+      <div className={styles.cardContainer}>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card063}`}>
+          <Image
+            src="/images/card01.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>どこかわからん絶景</h3>
+            <p>
+              ここはよくわからないけど、めっちゃ綺麗な絶景ポジションで、夜は綺麗な星がみれますが一人で来るとまず寂しくて景色どころではないでしょう。
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card064}`}>
+          <Image
+            src="/images/card02.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>沖縄</h3>
+            <p>
+              沖縄の海ですが、ここは沖縄の海です。それ以上はありません。綺麗です。
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card065}`}>
+          <Image
+            src="/images/card03.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>富士山</h3>
+            <p>
+              これは富士山です。夕方の富士山はとても綺麗です。どこから撮ったかって？
+              それは想像におまかせするよ。まぁAIなんだけどね
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p className={styles.title}>カードタイプのフェードイン</p>
+        <p className={styles.title}>全て fadeIn 0.6s</p>
+        <p className={styles.title}>
+          ① animation-delay: 0.4s;
+          <br />
+          ② animation-delay: 0.6s;
+          <br />③ animation-delay: 0.8s;
+        </p>
+      </div>
+      <div className={styles.cardContainer}>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card066}`}>
+          <Image
+            src="/images/card01.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>どこかわからん絶景</h3>
+            <p>
+              ここはよくわからないけど、めっちゃ綺麗な絶景ポジションで、夜は綺麗な星がみれますが一人で来るとまず寂しくて景色どころではないでしょう。
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card067}`}>
+          <Image
+            src="/images/card02.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>沖縄</h3>
+            <p>
+              沖縄の海ですが、ここは沖縄の海です。それ以上はありません。綺麗です。
+            </p>
+          </div>
+        </div>
+        <div ref={addToRefs} className={`${styles.card} ${styles.card068}`}>
+          <Image
+            src="/images/card03.png"
+            width={280}
+            height={186}
+            alt="card01"
+          />
+          <div className={styles.cardInnerBox}>
+            <h3>富士山</h3>
+            <p>
+              これは富士山です。夕方の富士山はとても綺麗です。どこから撮ったかって？
+              それは想像におまかせするよ。まぁAIなんだけどね
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.section01}>
         <p>
           ease-inも
